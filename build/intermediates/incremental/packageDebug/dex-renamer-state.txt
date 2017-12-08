@@ -1,0 +1,7 @@
+#Thu Dec 07 07:09:29 SGT 2017
+base.0=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_912d8fd421ba8ec25ad3594e368b271e8f1697a2
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e98f94ee84aca1cab6b1652fe8056f4e488ec137\\classes.dex
+base.1=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e98f94ee84aca1cab6b1652fe8056f4e488ec137
+file.0=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_912d8fd421ba8ec25ad3594e368b271e8f1697a2\\classes.dex

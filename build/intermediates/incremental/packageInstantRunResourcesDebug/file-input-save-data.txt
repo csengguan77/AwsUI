@@ -1,0 +1,30 @@
+#Internal package file, do not edit.
+#Thu Dec 07 07:08:40 SGT 2017
+2.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+5.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\record_item.xml
+5.set=ANDROID_RESOURCE
+3.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+6.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\ic_launcher.png
+2.set=ANDROID_RESOURCE
+4.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+7.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_download_selection.xml
+7.set=ANDROID_RESOURCE
+count=9
+0.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_download.xml
+5.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+8.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\bucket_item.xml
+4.set=ANDROID_RESOURCE
+6.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+1.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_upload.xml
+1.set=ANDROID_RESOURCE
+7.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+2.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_main.xml
+6.set=ANDROID_RESOURCE
+0.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+8.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+3.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+3.set=ANDROID_RESOURCE
+1.base=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_
+4.file=C\:\\Users\\hnwq63\\Downloads\\aws-sdk-android-samples-master\\aws-sdk-android-samples-master\\S3TransferUtilitySample\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+8.set=ANDROID_RESOURCE
+0.set=ANDROID_RESOURCE
