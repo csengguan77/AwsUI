@@ -17,6 +17,7 @@ package com.amazonaws.demo.s3transferutility;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -53,6 +54,7 @@ public class DownloadSelectionActivity extends ListActivity {
         setContentView(R.layout.activity_download_selection);
         initData();
         initUI();
+
     }
 
     @Override

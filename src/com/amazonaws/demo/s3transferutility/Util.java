@@ -16,7 +16,9 @@
 package com.amazonaws.demo.s3transferutility;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
@@ -184,12 +186,15 @@ public class Util {
                 .getBytesTotal());
         map.put("id", observer.getId());
         map.put("checked", isChecked);
-        map.put("fileName", observer.getAbsoluteFilePath());
+//csg The absolute file path is permanent exist       map.put("fileName", observer.getAbsoluteFilePath());
+        map.put("fileName", Singleton.getInstance().getAppDirectory());
         map.put("progress", progress);
         map.put("bytes",
                 getBytesString(observer.getBytesTransferred()) + "/"
                         + getBytesString(observer.getBytesTotal()));
         map.put("state", observer.getState());
         map.put("percentage", progress + "%");
+
+        map.put("image", BitmapFactory.decodeFile(Singleton.getInstance().getAppDirectory()));
     }
 }

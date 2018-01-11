@@ -17,6 +17,9 @@ package com.amazonaws.demo.s3transferutility;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -25,6 +28,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
@@ -39,6 +43,7 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferType;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,16 +85,24 @@ public class DownloadActivity extends ListActivity {
     private ArrayList<HashMap<String, Object>> transferRecordMaps;
     private int checkedIndex;
 
+    public String AppDirectory;
+    Bitmap bitmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
+        //AppDirectory= String.valueOf(this.getExternalFilesDir(null));    //get application directory
+        AppDirectory= String.valueOf(Environment.getExternalStorageDirectory().toString());    //get base directory, wrong way
+        Singleton.getInstance().setAppDirectory(AppDirectory);
+
         // Initializes TransferUtility, always do this before using it.
         transferUtility = Util.getTransferUtility(this);
         checkedIndex = INDEX_NOT_CHECKED;
         transferRecordMaps = new ArrayList<HashMap<String, Object>>();
         initUI();
     }
+
 
     @Override
     protected void onResume() {
@@ -140,12 +153,13 @@ public class DownloadActivity extends ListActivity {
          */
         simpleAdapter = new SimpleAdapter(this, transferRecordMaps,
                 R.layout.record_item, new String[] {
-                        "checked", "fileName", "progress", "bytes", "state", "percentage"
+                        "checked", "fileName", "progress", "bytes", "state", "percentage", "image"
                 },
                 new int[] {
                         R.id.radioButton1, R.id.textFileName, R.id.progressBar1, R.id.textBytes,
-                        R.id.textState, R.id.textPercentage
+                        R.id.textState, R.id.textPercentage, R.id.imageView2
                 });
+
         simpleAdapter.setViewBinder(new ViewBinder() {
             @Override
             public boolean setViewValue(View view, Object data,
@@ -175,6 +189,14 @@ public class DownloadActivity extends ListActivity {
                         TextView percentage = (TextView) view;
                         percentage.setText((String) data);
                         return true;
+                    case R.id.imageView2:
+                        if( (view instanceof ImageView) & (data instanceof Bitmap) ){
+                            ImageView image = (ImageView) view;
+//                        image.setImageBitmap(bitmap);
+                            image.setImageBitmap((Bitmap) data);
+                            return true;
+                        }
+
                 }
                 return false;
             }
@@ -210,6 +232,11 @@ public class DownloadActivity extends ListActivity {
         btnDownload.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*csg Added*/
+/*                Intent intent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 0);
+*/
                 Intent intent = new Intent(DownloadActivity.this, DownloadSelectionActivity.class);
                 startActivityForResult(intent, DOWNLOAD_SELECTION_REQUEST_CODE);
             }
@@ -328,6 +355,18 @@ public class DownloadActivity extends ListActivity {
                 String key = data.getStringExtra("key");
                 beginDownload(key);
             }
+        }else {
+            if (resultCode == RESULT_OK){
+                Uri targetUri = data.getData();
+                //fileName.setText(targetUri.toString());
+
+                try {
+                    bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
+                } catch (FileNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -338,6 +377,7 @@ public class DownloadActivity extends ListActivity {
         // Location to download files from S3 to. You can choose any accessible
         // file.
         File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + key);
+        //File file = new File(Singleton.getInstance().getAppDirectory() + "/" + key);
 
         // Initiate the download
         TransferObserver observer = transferUtility.download(Constants.BUCKET_NAME, key, file);
@@ -349,6 +389,7 @@ public class DownloadActivity extends ListActivity {
          * -> set listeners to in progress transfers.
          */
         // observer.setTransferListener(new DownloadListener());
+        bitmap = BitmapFactory.decodeFile(file.getPath());
     }
 
     /*
