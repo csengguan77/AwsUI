@@ -54,4 +54,11 @@
         android:layout_alignLeft="@id/textBytes"
         android:layout_below="@id/textBytes" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textState"
+        android:layout_below="@+id/progressBar1" />
+
 </RelativeLayout>
