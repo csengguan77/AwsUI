@@ -186,8 +186,8 @@ public class Util {
                 .getBytesTotal());
         map.put("id", observer.getId());
         map.put("checked", isChecked);
-//csg The absolute file path is permanent exist       map.put("fileName", observer.getAbsoluteFilePath());
-        map.put("fileName", Singleton.getInstance().getAppDirectory());
+        map.put("fileName", observer.getAbsoluteFilePath());
+//csg        map.put("fileName", Singleton.getInstance().getAppDirectory());
         map.put("progress", progress);
         map.put("bytes",
                 getBytesString(observer.getBytesTransferred()) + "/"
@@ -195,6 +195,7 @@ public class Util {
         map.put("state", observer.getState());
         map.put("percentage", progress + "%");
 
-        map.put("image", BitmapFactory.decodeFile(Singleton.getInstance().getAppDirectory()));
+//csg        map.put("image", BitmapFactory.decodeFile(Singleton.getInstance().getAppDirectory()));
+        map.put("image", BitmapFactory.decodeFile(observer.getAbsoluteFilePath()));
     }
 }

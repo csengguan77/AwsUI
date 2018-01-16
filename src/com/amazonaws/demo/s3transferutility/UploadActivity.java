@@ -446,8 +446,8 @@ public class UploadActivity extends ListActivity {
             if (isExternalStorageDocument(uri)) {
                 final String docId = DocumentsContract.getDocumentId(uri);
                 final String[] split = docId.split(":");
-                //return Environment.getExternalStorageDirectory() + "/" + split[1];
-                return Singleton.getInstance().getAppDirectory() + "/" + split[1];
+                return Environment.getExternalStorageDirectory() + "/" + split[1];
+                //return Singleton.getInstance().getAppDirectory() + "/" + split[1];
             } else if (isDownloadsDocument(uri)) {
                 final String id = DocumentsContract.getDocumentId(uri);
                 uri = ContentUris.withAppendedId(
