@@ -92,8 +92,8 @@ public class DownloadActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
-        //AppDirectory= String.valueOf(this.getExternalFilesDir(null));    //get application directory
-        AppDirectory= String.valueOf(Environment.getExternalStorageDirectory().toString());    //get base directory, wrong way
+        AppDirectory= String.valueOf(this.getExternalFilesDir(null));    //get application directory
+        //AppDirectory= String.valueOf(Environment.getExternalStorageDirectory().toString());    //get base directory, wrong way
         Singleton.getInstance().setAppDirectory(AppDirectory);
 
         // Initializes TransferUtility, always do this before using it.
@@ -376,8 +376,8 @@ public class DownloadActivity extends ListActivity {
     private void beginDownload(String key) {
         // Location to download files from S3 to. You can choose any accessible
         // file.
-        File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + key);
-        //File file = new File(Singleton.getInstance().getAppDirectory() + "/" + key);
+        //File file = new File(Environment.getExternalStorageDirectory().toString() + "/" + key);
+        File file = new File(Singleton.getInstance().getAppDirectory() + "/" + key);
 
         // Initiate the download
         TransferObserver observer = transferUtility.download(Constants.BUCKET_NAME, key, file);
